@@ -48,7 +48,7 @@ typedef struct	general_s
 typedef struct	instruction_s
 {
 	char		*opcode;
-	void		(*f)(stack_t **stack, unsigned int line_number);
+	void		(*f)(t_stack **stack, unsigned int line_number);
 	general_t	general;
 }		instruction_t;
 
