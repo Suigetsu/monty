@@ -11,6 +11,8 @@ int	check_action(char *line, instruction_t *var)
 			i++;
 		if (line[i] && line[i] != ' ')
 		{
+			if (!strncmp(&line[i], "\n", 2))
+				break;
 			if (strncmp(&line[i], "push ", 5) && \
 				strncmp(&line[i], "pall ", 5) && strncmp(&line[i], "pall", 5))
 				return (ERROR);
