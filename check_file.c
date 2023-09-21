@@ -84,7 +84,8 @@ int	parse_file_args(char *filename, instruction_t *var, t_stack **stack)
 			ft_putnbr_fd(linecount, STDERR_FILENO);
 			ft_putstr_fd(": unknown instruction ", STDERR_FILENO);
 			ft_putstr_fd(var->opcode, STDERR_FILENO);
-			ft_putstr_fd("\n", STDERR_FILENO);
+			if (var->opcode[strlen(var->opcode) - 1] != '\n')
+				ft_putstr_fd("\n", STDERR_FILENO);
 			free(var->general.line);
 			free(var->opcode);
 			free_linkedlist(stack);
