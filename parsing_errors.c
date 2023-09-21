@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int	is_file_valid(char *filename, instruction_t *instr)
+int	is_file_valid(char *filename)
 {
 	if (strncmp(&filename[strlen(filename) - 2], ".m", 3))
 		return (1);

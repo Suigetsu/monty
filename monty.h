@@ -56,7 +56,7 @@ typedef struct	instruction_s
 /*                 error handling                     */
 /******************************************************/
 
-int	is_file_valid(char *filename, instruction_t *instr);
+int	is_file_valid(char *filename);
 int	check_file_open(char *filename, instruction_t *instr);
 
 /******************************************************/

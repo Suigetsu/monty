@@ -7,7 +7,7 @@ int	main(int ac, char **av)
 
 	stack = NULL;
 	bzero(&instr, sizeof(instruction_t));
-	if (ac != 2 || is_file_valid(av[1], &instr))
+	if (ac != 2 || is_file_valid(av[1]))
 	{
 		write(STDERR_FILENO, "USAGE: monty file\n", 19);
 		exit(EXIT_FAILURE);
