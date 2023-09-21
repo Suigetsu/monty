@@ -13,12 +13,12 @@ void	ft_putnbr_fd(int n, int fd)
 	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n = n *(-1);
+		n = n * (-1);
 		ft_putnbr_fd(n, fd);
 	}
 	else if (n > 9)
 	{
-		ft_putnbr_fd (n / 10, fd);
-		ft_putnbr_fd (n % 10, fd);
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
 }

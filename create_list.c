@@ -3,8 +3,8 @@
 t_stack	*create_node(int data)
 {
 	t_stack	*new_node;
-	
-	new_node = (t_stack*)malloc(sizeof(t_stack));
+
+	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
 	{
 		write(2, "Error: malloc failed\n", 21);
