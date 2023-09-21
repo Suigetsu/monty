@@ -48,7 +48,7 @@ int	check_action(char *line, instruction_t *var)
 		if (line[i] && line[i] != ' ')
 		{
 			if (atoi(&line[i]) == 0)
-				return (ERROR);
+				return (PUSH_ERROR);
 			var->general.nbr = atoi(&line[i]);
 			break;
 		}
