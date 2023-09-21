@@ -5,7 +5,7 @@ char	*readnsave(int fd, char *holder)
 	char	*buff;
 	int		count;
 
-	buff = malloc (BUFFER_SIZE + 1);
+	buff = malloc(BUFFER_SIZE + 1);
 	if (buff == NULL)
 		return (NULL);
 	count = 1;

@@ -13,8 +13,8 @@ int	check_action(char *line, instruction_t *var)
 		{
 			if (!strncmp(&line[i], "\n", 2))
 				break;
-			if (strncmp(&line[i], "push ", 5) && strncmp(&line[i], "pall ", 5) 
-				&& strncmp(&line[i], "pall", 5))
+			if (strncmp(&line[i], "push ", 5) && 
+			strncmp(&line[i], "pall ", 5) && strncmp(&line[i], "pall", 5))
 				return (ERROR);
 			if (!strncmp(&line[i], "push ", 5))
 				break;

@@ -16,6 +16,7 @@ void	push(t_stack **stack, int data)
 void	pall(t_stack *stack)
 {
 	t_stack	*current;
+
 	current = stack;
 	while (current != NULL)
 	{
