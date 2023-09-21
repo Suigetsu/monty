@@ -11,6 +11,7 @@
 # include <string.h>
 # include <fcntl.h>
 # include "get_next_line.h"
+
 /**
  * struct s_stack - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -20,28 +21,36 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct  s_stack
 {
 	int				n;
-	char			*action;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }               t_stack;
 
+/**
+ * struct general_s - a struct for general variables
+ * @fd: file descriptor
+ * @nbr: integer
+ * @line: line we read from a file
+ *
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO
+ */
 
 typedef struct	general_s
 {
 	int		fd;
 	int		nbr;
 	char	*line;
-	char	*token;
 }				general_t;
 
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
- *
+ * @general: a struct for the general vars
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
