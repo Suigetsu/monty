@@ -1,16 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mlagrini <mlagrini@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 09:36:41 by mlagrini          #+#    #+#             */
-/*   Updated: 2023/08/28 13:03:46 by mlagrini         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
+
+/**
+ * ft_isnewline - Checks if a string contains a newline character.
+ * @s: A pointer to a null-terminated string to be checked.
+ * Return: 1 if 's' contains a newline character, 0 otherwise.
+ */
 
 int	ft_isnewline(char *s)
 {
@@ -25,6 +19,13 @@ int	ft_isnewline(char *s)
 	}
 	return (0);
 }
+
+/**
+ * gnljoin - Concatenates two strings.
+ * @s1: The first null-terminated string.
+ * @s2: The second null-terminated string to be appended to s1.
+ * Return: A pointer to the concatenated string, or NULL on failure.
+ */
 
 char	*gnljoin(char *s1, char *s2)
 {
@@ -53,6 +54,14 @@ char	*gnljoin(char *s1, char *s2)
 	cat[i] = '\0';
 	return (cat);
 }
+
+/**
+ * gnlsubstr - Extracts a substring from a given string.
+ * @s: The null-terminated string to extract a substring from.
+ * @start: The starting index of the substring.
+ * @len: The length of the substring to extract.
+ * Return: A pointer to the extracted substring, an empty string, or NULL on failure.
+ */
 
 char	*gnlsubstr(char *s, unsigned int start, size_t len)
 {

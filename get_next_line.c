@@ -1,16 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mlagrini <mlagrini@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 18:42:23 by mlagrini          #+#    #+#             */
-/*   Updated: 2023/08/28 13:04:10 by mlagrini         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
+
+/**
+ * readnsave - Reads and appends data from a file descriptor into a buffer.
+ * @fd: The file descriptor to read data from.
+ * @holder: A pointer to a string that holds accumulated data.
+ * Return: A pointer to the modified 'holder' string if successful, or NULL
+ * on failure.
+ */
 
 char	*readnsave(int fd, char *holder)
 {
@@ -39,6 +35,13 @@ char	*readnsave(int fd, char *holder)
 	return (holder);
 }
 
+/**
+ * readline - Extracts a single line from a buffer.
+ * @buff: A pointer to a null-terminated string containing data.
+ * Return: A pointer to the extracted line including the newline character, or
+ * NULL on failure or if 'buff' is empty.
+ */
+
 char	*readline(char *buff)
 {
 	char	*line;
@@ -63,6 +66,13 @@ char	*readline(char *buff)
 	return (line);
 }
 
+/**
+ * newline - Removes and returns everything before the first newline character.
+ * @buff: A pointer to a null-terminated string containing data.
+ * Return: A pointer to the remaining data after the first newline character,
+ * or NULL if 'buff' is empty or does not contain a newline character.
+ */
+
 char	*newline(char *buff)
 {
 	char	*newholder;
@@ -80,6 +90,13 @@ char	*newline(char *buff)
 	free (buff);
 	return (newholder);
 }
+
+/**
+ * get_next_line - Reads and returns the next line from a file descriptor.
+ * @fd: The file descriptor to read data from.
+ * Return: A pointer to the next line read from 'fd', or NULL if there are no
+ * more lines to read or if an error occurs.
+ */
 
 char	*get_next_line(int fd)
 {

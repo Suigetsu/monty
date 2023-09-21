@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * push - Pushes a new node with data onto the top of a stack.
+ * @stack: A pointer to a pointer to the top node of the stack.
+ * @data: The integer data to be added to the new node.
+*/
+
 void	push(t_stack **stack, int data)
 {
     t_stack *new_node;
@@ -12,6 +18,12 @@ void	push(t_stack **stack, int data)
     }
     *stack = new_node;
 }
+
+/**
+ * pall - Prints all the elements of a stack.
+ *
+ * @stack: A pointer to the top node of the stack to be printed.
+*/
 
 void	pall(t_stack *stack)
 {

@@ -1,16 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mlagrini <mlagrini@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 09:14:14 by hrahmane          #+#    #+#             */
-/*   Updated: 2023/09/21 12:54:09 by mlagrini         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
+
+/**
+ * ft_putstr_fd - Writes a string to a file descriptor.
+ *
+ * @s: The string to be written.
+ * @fd: The file descriptor to which the string is written.
+ */
 
 size_t	ft_strlen(const char *s)
 {

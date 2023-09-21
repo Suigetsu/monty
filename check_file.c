@@ -1,5 +1,15 @@
 #include "monty.h"
 
+/**
+ * check_action - Checks the validity of a given instruction line.
+ * @line: The instruction line to be checked.
+ * @var: A pointer to an instruction structure to store data.
+ * Return:
+ * - PUSH (1) if the instruction is valid and a "push" operation.
+ * - PALL (0) if the instruction is valid and a "pall" operation.
+ * - ERROR (-1) if the instruction is invalid or contains errors.
+ */
+
 int	check_action(char *line, instruction_t *var)
 {
 	int	i;
@@ -42,6 +52,16 @@ int	check_action(char *line, instruction_t *var)
 	}
 	return (PUSH);
 }
+
+/**
+ * parse_file_args - Parses instructions from a file and performs actions.
+ * @filename: The name of the file containing instructions.
+ * @var: A pointer to an instruction structure to store data.
+ * @stack: A pointer to a stack structure to be manipulated.
+ * Return:
+ * - 0 on successful parsing and execution of instructions.
+ * - ERROR (-1) if there is an error during parsing or execution.
+ */
 
 int	parse_file_args(char *filename, instruction_t *var, t_stack **stack)
 {

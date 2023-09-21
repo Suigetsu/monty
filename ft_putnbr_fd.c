@@ -1,5 +1,11 @@
 #include "get_next_line.h"
 
+/**
+ * ft_putnbr_fd - Writes an integer to a file descriptor.
+ * @n: The integer to be written.
+ * @fd: The file descriptor to which the integer is written.
+ */
+
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n >= 0 && n <= 9)
