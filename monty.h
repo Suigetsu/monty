@@ -35,7 +35,8 @@ typedef struct  s_stack
  * @fd: file descriptor
  * @nbr: integer
  * @line: line we read from a file
- *
+ * @err_flag: a flag to be checked
+ * 
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
@@ -44,6 +45,7 @@ typedef struct	general_s
 {
 	int		fd;
 	int		nbr;
+	int		err_flag;
 	char	*line;
 }				general_t;
 
@@ -68,6 +70,7 @@ typedef struct	instruction_s
 
 int		is_file_valid(char *filename);
 int		check_file_open(char *filename, instruction_t *instr);
+int		my_atoi(char *str, instruction_t *var);
 
 /******************************************************/
 /*                read from the file                  */

@@ -50,9 +50,10 @@ int	check_action(char *line, instruction_t *var)
 			i++;
 		if (line[i] && line[i] != ' ')
 		{
-			if (atoi(&line[i]) == 0)
+			if (my_atoi(&line[i], var) == ERROR &&
+			var->general.err_flag == ERROR)
 				return (PUSH_ERROR);
-			var->general.nbr = atoi(&line[i]);
+			var->general.nbr = my_atoi(&line[i], var);
 			return (PUSH);
 		}
 	}
