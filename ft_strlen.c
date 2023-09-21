@@ -1,10 +1,9 @@
 #include "get_next_line.h"
 
 /**
- * ft_putstr_fd - Writes a string to a file descriptor.
- *
- * @s: The string to be written.
- * @fd: The file descriptor to which the string is written.
+ * ft_strlen - Calculate the length of a null-terminated string.
+ * @s: The null-terminated string to be measured.
+ * Return: The length of the string 's'.
  */
 
 size_t	ft_strlen(const char *s)
