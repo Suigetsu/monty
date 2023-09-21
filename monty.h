@@ -2,6 +2,7 @@
 # define MONTY_H
 
 # define ERROR -1
+# define PUSH_ERROR -2
 # define PALL 0
 # define PUSH 1
 

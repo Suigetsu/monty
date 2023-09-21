@@ -25,7 +25,10 @@ int	check_action(char *line, instruction_t *var)
 				break;
 			if (strncmp(&line[i], "push ", 5) &&
 			strncmp(&line[i], "pall ", 5) && strncmp(&line[i], "pall", 5))
+			{
+				var->opcode = strdup(&line[i]);
 				return (ERROR);
+			}
 			if (!strncmp(&line[i], "push ", 5))
 				break;
 			return (PALL);
@@ -73,6 +76,19 @@ int	parse_file_args(char *filename, instruction_t *var, t_stack **stack)
 	while (var->general.line)
 	{
 		if (check_action(var->general.line, var) == ERROR)
+		{
+			ft_putchar_fd('L', STDERR_FILENO);
+			ft_putnbr_fd(linecount, STDERR_FILENO);
+			ft_putstr_fd(": unknown instruction ", STDERR_FILENO);
+			ft_putstr_fd(var->opcode, STDERR_FILENO);
+			ft_putstr_fd("\n", STDERR_FILENO);
+			free(var->general.line);
+			free(var->opcode);
+			free_linkedlist(stack);
+			close(var->general.fd);
+			return (ERROR);
+		}
+		else if (check_action(var->general.line, var) == PUSH_ERROR)
 		{
 			ft_putchar_fd('L', STDERR_FILENO);
 			ft_putnbr_fd(linecount, STDERR_FILENO);
