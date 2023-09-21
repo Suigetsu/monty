@@ -24,12 +24,15 @@ int	check_action(char *line, instruction_t *var)
 			if (!strncmp(&line[i], "\n", 2))
 				break;
 			if (strncmp(&line[i], "push ", 5) &&
-			strncmp(&line[i], "pall ", 5) && strncmp(&line[i], "pall", 5))
+			strncmp(&line[i], "pall ", 5) && strncmp(&line[i], "pall", 5) &&
+			strncmp(&line[i], "pall\n", 5) && strncmp(&line[i], "push", 5) &&
+			strncmp(&line[i], "push\n", 5))
 			{
 				var->opcode = strdup(&line[i]);
 				return (ERROR);
 			}
-			if (!strncmp(&line[i], "push ", 5))
+			if (!strncmp(&line[i], "push ", 5) || !strncmp(&line[i], "push", 5) ||
+			!strncmp(&line[i], "push\n", 5))
 				break;
 			return (PALL);
 		}
@@ -50,10 +53,10 @@ int	check_action(char *line, instruction_t *var)
 			if (atoi(&line[i]) == 0)
 				return (PUSH_ERROR);
 			var->general.nbr = atoi(&line[i]);
-			break;
+			return (PUSH);
 		}
 	}
-	return (PUSH);
+	return (PUSH_ERROR);
 }
 
 /**
