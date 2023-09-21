@@ -13,7 +13,7 @@ char	*readnsave(int fd, char *holder)
 	char	*buff;
 	int		count;
 
-	buff = malloc (BUFFER_SIZE + 1);
+	buff = malloc(BUFFER_SIZE + 1);
 	if (buff == NULL)
 		return (NULL);
 	count = 1;
@@ -22,16 +22,16 @@ char	*readnsave(int fd, char *holder)
 		count = read(fd, buff, BUFFER_SIZE);
 		if (count < 0)
 		{
-			free (holder);
-			free (buff);
+			free(holder);
+			free(buff);
 			return (NULL);
 		}
 		buff[count] = '\0';
 		holder = gnljoin(holder, buff);
 		if (ft_isnewline(holder))
-			break ;
+			break;
 	}
-	free (buff);
+	free(buff);
 	return (holder);
 }
 
@@ -83,11 +83,11 @@ char	*newline(char *buff)
 		index++;
 	if (buff[index] == '\0')
 	{
-		free (buff);
+		free(buff);
 		return (NULL);
 	}
 	newholder = gnlsubstr(buff, (index + 1), (ft_strlen(buff) - index + 1));
-	free (buff);
+	free(buff);
 	return (newholder);
 }
 

@@ -70,7 +70,7 @@ int			check_action(char *line, instruction_t *var);
 /*                linked list functions               */
 /******************************************************/
 
-t_stack	*create_node(int data);
+t_stack		*create_node(int data);
 void		insert_at_end(t_stack **head, int data);
 void		free_linkedlist(t_stack **head);
 

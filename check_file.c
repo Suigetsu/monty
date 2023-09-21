@@ -23,8 +23,8 @@ int	check_action(char *line, instruction_t *var)
 		{
 			if (!strncmp(&line[i], "\n", 2))
 				break;
-			if (strncmp(&line[i], "push ", 5) && \
-				strncmp(&line[i], "pall ", 5) && strncmp(&line[i], "pall", 5))
+			if (strncmp(&line[i], "push ", 5) &&
+			strncmp(&line[i], "pall ", 5) && strncmp(&line[i], "pall", 5))
 				return (ERROR);
 			if (!strncmp(&line[i], "push ", 5))
 				break;
@@ -36,7 +36,7 @@ int	check_action(char *line, instruction_t *var)
 		while (line[i] && line[i] != ' ')
 			i++;
 		if (line[i] == ' ')
-			break ;
+			break;
 	}
 	while (line[i])
 	{
@@ -45,7 +45,7 @@ int	check_action(char *line, instruction_t *var)
 		if (line[i] && line[i] != ' ')
 		{
 			if (atoi(&line[i]) == 0)
-				return(ERROR);
+				return (ERROR);
 			var->general.nbr = atoi(&line[i]);
 			break;
 		}
@@ -80,7 +80,7 @@ int	parse_file_args(char *filename, instruction_t *var, t_stack **stack)
 			free(var->general.line);
 			free_linkedlist(stack);
 			close(var->general.fd);
-			return(ERROR);
+			return (ERROR);
 		}
 		else if (check_action(var->general.line, var) == PUSH)
 			push(stack, var->general.nbr);
