@@ -2,7 +2,7 @@
 
 int	main(int ac, char **av)
 {
-	sstack_t		*stack;
+	t_stack		*stack;
 	instruction_t	instr;
 
 	stack = NULL;

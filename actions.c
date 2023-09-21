@@ -1,8 +1,8 @@
 #include "monty.h"
 
-void	push(sstack_t **stack, int data)
+void	push(t_stack **stack, int data)
 {
-    sstack_t *new_node;
+    t_stack *new_node;
 	
 	new_node = create_node(data);
     if (*stack != NULL)
@@ -13,9 +13,9 @@ void	push(sstack_t **stack, int data)
     *stack = new_node;
 }
 
-void	pall(sstack_t *stack)
+void	pall(t_stack *stack)
 {
-    sstack_t *current;
+    t_stack *current;
 	current = stack;
     while (current != NULL)
 	{

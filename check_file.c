@@ -43,7 +43,7 @@ int	check_action(char *line, instruction_t *var)
 	return (PUSH);
 }
 
-int	parse_file_args(char *filename, instruction_t *var, sstack_t **stack)
+int	parse_file_args(char *filename, instruction_t *var, t_stack **stack)
 {
 	int	linecount;
 

@@ -12,7 +12,7 @@
 # include <fcntl.h>
 # include "get_next_line.h"
 /**
- * struct stack_s - doubly linked list representation of a stack (or queue)
+ * struct s_stack - doubly linked list representation of a stack (or queue)
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
@@ -20,13 +20,13 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
-typedef struct  stack_s
+typedef struct  s_stack
 {
 	int				n;
 	char			*action;
-	struct stack_s	*prev;
-	struct stack_s	*next;
-}               sstack_t;
+	struct s_stack	*prev;
+	struct s_stack	*next;
+}               t_stack;
 
 
 typedef struct	general_s
@@ -63,22 +63,22 @@ int	check_file_open(char *filename, instruction_t *instr);
 /*                read from the file                  */
 /******************************************************/
 
-int			parse_file_args(char *filename, instruction_t *var, sstack_t **stack);
+int			parse_file_args(char *filename, instruction_t *var, t_stack **stack);
 int			check_action(char *line, instruction_t *var);
 
 /******************************************************/
 /*                linked list functions               */
 /******************************************************/
 
-sstack_t	*create_node(int data);
-void		insert_at_end(sstack_t **head, int data);
-void		free_linkedlist(sstack_t **head);
+t_stack	*create_node(int data);
+void		insert_at_end(t_stack **head, int data);
+void		free_linkedlist(t_stack **head);
 
 /******************************************************/
 /*                      actions                       */
 /******************************************************/
 
-void	push(sstack_t **stack, int data);
-void	pall(sstack_t *stack);
+void	push(t_stack **stack, int data);
+void	pall(t_stack *stack);
 
 #endif
