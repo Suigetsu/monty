@@ -60,7 +60,8 @@ char	*gnljoin(char *s1, char *s2)
  * @s: The null-terminated string to extract a substring from.
  * @start: The starting index of the substring.
  * @len: The length of the substring to extract.
- * Return: A pointer to the extracted substring, an empty string, or NULL on failure.
+ * Return: A pointer to the extracted substring,
+ * an empty string, or NULL on failure.
  */
 
 char	*gnlsubstr(char *s, unsigned int start, size_t len)

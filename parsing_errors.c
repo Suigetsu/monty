@@ -3,7 +3,8 @@
 /**
  * is_file_valid - Checks if a file name ends with ".m".
  * @filename: A pointer to a null-terminated string representing the filename.
- * This function determines whether the given filename ends with ".m" (case-sensitive).
+ * This function determines whether the given filename
+ * ends with ".m" (case-sensitive).
  * Return: 1 if the filename ends with ".m", otherwise 0.
  */
 
