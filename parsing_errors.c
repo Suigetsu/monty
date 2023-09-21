@@ -41,6 +41,13 @@ void	failed_malloc(void)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * my_atoi - Converts a string to an integer.
+ * @str: The string to be converted to an integer.
+ * @var: A pointer to an instruction structure to store error information.
+ * Return: The integer value of the converted string or -1 on error.
+ */
+
 int	my_atoi(char *str, instruction_t *var)
 {
 	int	i;
