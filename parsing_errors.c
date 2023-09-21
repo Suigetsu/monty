@@ -30,3 +30,13 @@ int	check_file_open(char *filename, instruction_t *instr)
 	close(instr->general.fd);
 	return (0);
 }
+/**
+ * failed_malloc - a function that prints an error message
+ * and exits if malloc is failed
+*/
+
+void	failed_malloc(void)
+{
+	ft_putstr_fd("Error: malloc failed\n", STDERR_FILENO);
+	exit(EXIT_FAILURE);
+}

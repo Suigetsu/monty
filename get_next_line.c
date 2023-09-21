@@ -14,8 +14,8 @@ char	*readnsave(int fd, char *holder)
 	int		count;
 
 	buff = malloc(BUFFER_SIZE + 1);
-	if (buff == NULL)
-		return (NULL);
+	if (!buff)
+		failed_malloc();
 	count = 1;
 	while (count > 0)
 	{

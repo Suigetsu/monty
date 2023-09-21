@@ -38,9 +38,13 @@ char	*gnljoin(char *s1, char *s2)
 	if (s1 == NULL)
 	{
 		s1 = malloc(1);
+		if (!s1)
+			failed_malloc();
 		*s1 = '\0';
 	}
 	cat = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!cat)
+		failed_malloc();
 	if (cat == NULL)
 		return (NULL);
 	while (s1[i] != '\0')
@@ -73,10 +77,14 @@ char	*gnlsubstr(char *s, unsigned int start, size_t len)
 	if (start >= ft_strlen(s))
 	{
 		sub = malloc(1);
+		if (!sub)
+			failed_malloc();
 		sub[0] = '\0';
 		return (sub);
 	}
 	sub = malloc((len + 1) * sizeof(char));
+	if (!sub)
+		failed_malloc();
 	if (s == NULL || sub == NULL)
 		return (NULL);
 	while (s[start] != '\0' && i < len)
